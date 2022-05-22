@@ -1,0 +1,18 @@
+main: me.tdvne.commandspy.main
+name: CommandSpy
+authors:
+  - tdvne
+version: 1.0-SNAPSHOT
+commands:
+  spy:
+    description: CommandSpy
+    permission: spy.admin
+permissions:
+  spy.enable:
+    default: op
+  spy.disable:
+    default: op
+  spy.admin:
+    default: op
+  spy.enableonjoin:
+    default: op

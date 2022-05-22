@@ -12,8 +12,8 @@ import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 
 public class SocialSpy extends JavaPlugin implements Listener {
-    boolean Socialspy = false;
 
+    boolean SocialSpy = false;
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         Player p = (Player)sender;
         if (label.equalsIgnoreCase("spy"))
@@ -22,11 +22,11 @@ public class SocialSpy extends JavaPlugin implements Listener {
             } else if (args.length == 1) {
                 if (args[0].equalsIgnoreCase("enable")) {
                     if (p.hasPermission("spy.enable")) {
-                        this.Socialspy = true;
+                        this.SocialSpy = true;
                         p.sendMessage(CC.translate("&eYou have successfully &aenabled &espy mode!"));
                     }
                 } else if (args[0].equalsIgnoreCase("disable") && p.hasPermission("spy.disable")) {
-                    this.Socialspy = false;
+                    this.SocialSpy = false;
                     p.sendMessage(CC.translate("&eYou have successfully &cdisabled &espy mode!"));
                 }
             }
@@ -36,7 +36,7 @@ public class SocialSpy extends JavaPlugin implements Listener {
     @EventHandler
     public void Comando(PlayerCommandPreprocessEvent e) {
         Bukkit.getConsoleSender().sendMessage("[Console] &c" + e.getPlayer().getName() + "&e" + "executed:" + "&c" + e.getMessage());
-        if (this.Socialspy) {
+        if (this.SocialSpy) {
             byte b;
             int i;
             Player[] arrayOfPlayer;
@@ -55,7 +55,7 @@ public class SocialSpy extends JavaPlugin implements Listener {
     public void AlEntrar(PlayerJoinEvent e) {
         Player p = e.getPlayer();
         if (p.hasPermission("spy.enableonjoin") && p.isOp()) {
-            this.Socialspy = true;
+            this.SocialSpy = true;
             p.sendMessage(CC.translate("&eYou have successfully &aenabled &espy mode!"));
         }
     }
