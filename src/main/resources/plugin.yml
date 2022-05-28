@@ -1,4 +1,4 @@
-main: me.tdvne.commandspy.main
+main: me.tdvne.commandspy.Main
 name: CommandSpy
 authors:
   - tdvne
