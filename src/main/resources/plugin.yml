@@ -1,11 +1,13 @@
 main: me.tdvne.commandspy.Main
 name: CommandSpy
+description: A simple spigot/bukkit plugin that lets you spy on your players
 authors:
   - tdvne
 version: 1.0-SNAPSHOT
 commands:
   spy:
     description: CommandSpy
+    usage: /spy
     permission: spy.admin
 permissions:
   spy.enable:
