@@ -20,7 +20,6 @@ public class Main extends JavaPlugin implements Listener {
 
     public void onEnable() {
         instance = this;
-        this.getServer().getPluginManager().registerEvents(this, this);
         this.getServer().getPluginManager().registerEvents(new CommandPreProcess(), this);
         this.getServer().getPluginManager().registerEvents(new PlayerJoin(), this);
         this.getCommand("spy").setExecutor(new SocialSpy());
